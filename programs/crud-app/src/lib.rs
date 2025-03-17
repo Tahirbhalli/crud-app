@@ -118,7 +118,7 @@ pub struct CreateEntry<'info> {
         payer = owner,
         seeds =[title.as_bytes(), owner.key().as_ref()], // it is used to define pda for account that is like a private key in db
         bump, //any time when we add seeds we need to add bump
-        space = 8 + JournalEntryState::INIT_SPACE // 8 is anchor discriminated always have to add
+        space = 8 + JournalEntryState::INIT_SPACE // 8 is anchor discriminated always have to add and it pointing to struct name JournalEntryState
     )]
     pub journal_entry: Account<'info, JournalEntryState>,
 
